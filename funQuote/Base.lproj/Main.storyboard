@@ -24,7 +24,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-BA-7dm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-BA-7dm">
                                 <rect key="frame" x="20" y="20" width="280" height="280"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2.jpg" width="500" height="622"/>
+        <image name="0.jpg" width="400" height="400"/>
     </resources>
 </document>
