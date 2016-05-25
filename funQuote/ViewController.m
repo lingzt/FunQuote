@@ -75,14 +75,18 @@ BOOL spcialEffect;
     NSDictionary *chosenMeme = memesArr[r];
     self.quoteLabel.text = chosenMeme[@"Quote"];
     self.imageView.image = chosenMeme[@"Image"];
+    [memesArr removeObjectAtIndex:r];
+
 }
+
+
 
 -(void)timer{
     NSTimer *repeadEveryFewSecond = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showRandomMeme) userInfo:nil repeats:YES];
     
 //    NSTimer *repeadEveryFewSecond = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector([self showRandomMeme)] userInfo:nil repeats:YES];
 }
-//
+
 
 
 
