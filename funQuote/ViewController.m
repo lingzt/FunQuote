@@ -26,6 +26,7 @@ UIImage *chosenImage;
 NSString *chosenQuote;
 NSMutableArray *memesArr;
 BOOL spcialEffect;
+
 //NSTimer *repeadEveryFewSecond;
 
 @implementation ViewController
@@ -38,6 +39,7 @@ BOOL spcialEffect;
 //MARK: - Life Cycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self presetArray];
     [self timer];
     
 }
@@ -51,29 +53,28 @@ BOOL spcialEffect;
 //1. preset Array
 -(void)presetArray{
     NSDictionary *meme1 = @{@"Image" : [UIImage imageNamed:@"1.png"],
-                            @"Quote" : @[ @"Only character in Game of Thrones to died of old age"],
+                            @"Quote" : @"Only character in Game of Thrones to died of old age",
                             @"Special effects" : @NO,
                             };
     NSDictionary *meme2 = @{@"Image" : [UIImage imageNamed:@"2.jpg"],
-                            @"Quote" : @[ @"The best kiler in game of Thrones?"],
+                            @"Quote" : @"The best kiler in game of Thrones?",
                             @"Special effects" : @NO,
                             };
     NSDictionary *meme3 = @{@"Image" : [UIImage imageNamed:@"3.png"],
-                            @"Quote" : @[ @"I heard the party died after I left"],
+                            @"Quote" : @"I heard the party died after I left",
                             @"Special effects" : @NO,
                             };
     memesArr = [NSMutableArray arrayWithObjects:meme1, meme2, meme3, nil];
-
 }
 
 
 -(void)showRandomMeme{
-    printf("timer is working \n");
-    NSUInteger r = arc4random_uniform([memesArr count]);
+    self.quoteLabel.textColor = [UIColor whiteColor];
+    int r = arc4random_uniform((uint32_t) memesArr.count);
+    printf("%d is the chosen number",r);
     NSDictionary *chosenMeme = memesArr[r];
-    self.quoteLabel.text = chosenMeme[@"quote"];
-    
-    
+    self.quoteLabel.text = chosenMeme[@"Quote"];
+    self.imageView.image = chosenMeme[@"Image"];
 }
 
 -(void)timer{
